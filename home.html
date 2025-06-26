@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adity.Ai - Home</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand animated-logo" href="#">Adity.<span class="text-primary">Ai</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="page.html?page=About">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="page.html?page=Service">Service</a></li>
+          <li class="nav-item"><a class="nav-link" href="page.html?page=Category">Category</a></li>
+          <li class="nav-item"><a class="nav-link" href="page.html?page=Contact">Contact</a></li>
+        </ul>
+        <!-- Theme Toggle Icon Button with Bootstrap Icon -->
+        <button class="btn btn-outline-secondary logout-btn theme-icon-btn" onclick="toggleTheme()" title="Toggle Theme">
+            <i id="themeIcon" class="bi bi-sun"></i>
+        </button>
+  
+        <!-- <button class="btn btn-outline-danger logout-btn" onclick="logout()">Logout</button> -->
+
+        <button class="btn btn-outline-danger logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Image Slider -->
+  <div id="carouselExample" class="container carousel slide mt-3" data-bs-ride="carousel">
+    <div class="carousel-inner rounded-3 shadow-sm">
+      <div class="carousel-item active">
+        <img src="images/img1.jpg" class="d-block w-100" alt="Slide 1" />
+      </div>
+      <div class="carousel-item">
+        <img src="images/img2.jpg" class="d-block w-100" alt="Slide 2" />
+      </div>
+      <div class="carousel-item">
+        <img src="images/img3.jpg" class="d-block w-100" alt="Slide 3" />
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Home Container -->
+  <main class="container home-container mt-4">
+    <h1>Welcome, <span id="usernameDisplay"></span>!</h1>
+
+    <div class="row">
+      <!-- User Profile -->
+      <section class="col-md-4 mb-4">
+        <div class="card text-center shadow-sm">
+          <img src="https://i.pravatar.cc/150?u=random" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px; height:100px;" alt="User Avatar" />
+          <div class="card-body">
+            <h1 class="card-title" id="profileName">User</h1>
+            <p class="card-text">Computer Engineer</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clock & Calculator -->
+      <section class="col-md-8">
+        <div class="features">
+          <h2>🕒 Live Clock</h2>
+          <p id="clock" class="fs-4 fw-semibold text-primary"></p>
+          <h2>🧮 Simple Calculator</h2>
+            <input type="number" id="num1" class="form-control mb-2" placeholder="Enter first number" />
+            <input type="number" id="num2" class="form-control mb-2" placeholder="Enter second number" />
+            <div class="d-flex gap-2 flex-wrap">
+            <button class="btn btn-primary" onclick="calculate('add')">Addition</button>
+            <button class="btn btn-secondary" onclick="calculate('subtract')">Subtract</button>
+            <button class="btn btn-success" onclick="calculate('multiply')">Multiply</button>
+            <button class="btn btn-danger" onclick="calculate('divide')">Divide</button>
+            </div>
+            <p id="result" class="text-success mt-3"></p>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- To-Do List -->
+    <section class="mt-4">
+      <h2>✅ To-Do List</h2>
+      <div class="input-group mb-3">
+        <input type="text" id="todoInput" class="form-control" placeholder="Add a task" aria-label="Add a task" />
+        <button class="btn btn-success" onclick="addTask()">Add</button>
+      </div>
+      <ul class="list-group" id="todoList"></ul>
+    </section>
+
+  </main>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
