@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #74ebd5, #ACB6E5, #f6d365, #fda085);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .page-card {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      max-width: 420px;
+      width: 90%;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .page-card h2 {
+      color: #3b3737;
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .page-card p {
+    color: #3b3737;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-card">
+    <h2 id="pageTitle">Page</h2>
+    <p>This section is under construction. We'll be live very soon!</p>
+    <div class="link">
+      <p>Back to <a href="home.html"> Home Page</a></p>
+    </div>
+  </div>
+
+  <script>
+    // Get URL param like ?page=About
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get("page") || "Page";
+
+    // Set dynamic page title
+    document.getElementById("pageTitle").textContent = `🚧 ${page} Page`;
+  </script>
+</body>
+</html>
