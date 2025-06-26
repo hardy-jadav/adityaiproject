@@ -1,0 +1,299 @@
+/* General */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    color: #333;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #222 !important;
+    color: #f0f0f0 !important;
+}
+
+.dark-mode .home-container {
+    background-color: #333 !important;
+    color: white !important;
+}
+
+/* Containers */
+.form-container {
+    background: white;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 8px;
+}
+
+/* Inputs and Buttons */
+input,
+button {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+/* Buttons: width auto by default (not full width) */
+button {
+    width: auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Full-width inputs */
+input.form-control {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Logout button specifically */
+.logout-btn {
+    margin-left: 20px;
+    width: auto;
+    padding: 6px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #dc3545;
+    color: white;
+    border: 1px solid #dc3545;
+}
+
+/* Error messages */
+.error {
+    color: red;
+}
+
+/* Navbar */
+.animated-logo {
+    font-weight: 600;
+    font-size: 1.6rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.nav-link {
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+/* Carousel */
+.carousel img {
+    height: 400px;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .carousel img {
+        height: 250px;
+    }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 18px;
+    border-radius: 50%;
+    background-color: #000000;
+    opacity: 0.7;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    opacity: 1;
+}
+
+/* Home container */
+.home-container {
+    animation: fadeIn 1s ease-in-out;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+
+/* Features */
+.features h2 {
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+/* To-Do List */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Theme toggle button with icon animation */
+.theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #6c757d;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: #495057;
+}
+
+.theme-toggle-btn .icon {
+    display: inline-block;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Calculator and To-do buttons */
+.btn-primary,
+.btn-success,
+.btn-info {
+    width: auto;
+    /* prevent full width */
+    padding: 0.375rem 0.75rem;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .logout-btn {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+/* Icon Button */
+.theme-icon-btn {
+    padding: 6px 10px;
+    border-radius: 50%;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-icon-btn:hover {
+    transform: rotate(15deg);
+}
+
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.list-group-item {
+    padding: 5px 10px !important;
+}
+
+.remove-btn {
+    margin: 5px 0px !important;
+}
+
+.navbar {
+    background-color: #FFF;
+}
+
+
+/* Dark Theme */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: none;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .list-group-item {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #bbb;
+}
+
+body.dark-mode .btn-outline-secondary {
+    color: #ffffff;
+    border-color: #888;
+}
+
+body.dark-mode .navbar {
+    background-color: #1a1a1a !important;
+}
+
+body.dark-mode .navbar .nav-link {
+    color: #ffffff;
+}
+
+body.dark-mode .navbar .nav-link.active {
+    color: #0d6efd;
+}
+
+.card.text-center.shadow-sm {
+    height: 100%;
+}
